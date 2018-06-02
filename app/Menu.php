@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Binnacle extends Model
+class Menu extends Model
 {
-    protected $table = 'binnacles';
+    protected $table = 'menus';
     protected $guarded = [
         'id',
     ];
     protected $fillable = [
-        'username',
-        'description',
-        'table',
-        'table_id',
+        'name',
         'action',
+        'id_father',                
     ];
 }

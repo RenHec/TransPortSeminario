@@ -5,16 +5,16 @@
     <!-- Logo -->
     <a href="{{ route('home.index')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>D</b>SA</span>
+        <span class="logo-mini"><b>T</b>TP</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Disprovasa,</b> S.A.</span>
+      <span class="logo-lg"><b>TransPort,</b> S.A.</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Disprovasa, S.A.</span>
+        <span class="sr-only">TransPort, S.A.</span>
       </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">

@@ -12,8 +12,9 @@ class CreateBinnaclesTable extends Migration
         Schema::create('binnacles', function (Blueprint $table) {
           $table->increments('id');
           $table->string('username',25)->nullable();
-          $table->string('description',1000)->nullable();
+          $table->string('description',1500)->nullable();
           $table->string('table',25)->nullable();
+          $table->integer('table_id')->nullable();
           $table->string('action',25)->nullable();
           $table->timestamps();
         });

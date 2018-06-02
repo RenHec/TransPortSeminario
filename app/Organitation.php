@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Organitation extends Model
 {
-  protected $table = 'rols';
+  protected $table = 'organitations';
   protected $guarded = [
   	'id',
-  	'button_id',
-  	'menu_id'
+  	'municipality_id',
+  	'rol_id'
   ];
 }
