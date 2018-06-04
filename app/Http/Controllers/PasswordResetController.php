@@ -9,7 +9,7 @@ use App\User;
 
 class PasswordResetController extends Controller
 {
-  protected $redirectTo = 'disprovasa-sa/password_reset';
+  protected $redirectTo = 'transport/password_reset';
 
   public function index()
   {

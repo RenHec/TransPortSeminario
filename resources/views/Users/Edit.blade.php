@@ -29,7 +29,7 @@
         <select class="form-control" name="rol_id" id="rol_id" required autofocus>
             @if ($user->rol_id == 1)
               @foreach ($rols as $rol)
-              <option disabled value="{{$rol->id}}" {{$rol->id == $user->rol_id ? 'selected' : ''}}>{{$rol->name}}</option>
+              <option disabled value="{{$rol->id}}" {{ $rol->id == $user->rol_id ? 'selected' : ''}}>{{$rol->name}}</option>
               @endforeach
             @else
               <option value="" selected disabled>seleccione rol</option>

@@ -15,4 +15,8 @@ class Menu extends Model
         'action',
         'id_father',                
     ];
+
+  public static function mostrarInformacion(){
+    return Menu::select('id', 'name')->orderBy('name', 'asc')->get();
+  }    
 }

@@ -13,4 +13,8 @@ class Button extends Model
     protected $fillable = [
         'name',
     ];
+
+  public static function mostrarInformacion(){
+    return Button::select('id', 'name')->orderBy('name', 'asc')->get();
+  }      
 }

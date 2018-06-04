@@ -8,7 +8,7 @@ use User;
 
 class ConfirmationEmailController extends Controller
 {
-  protected $redirectTo = 'disprovasa-sa/confirmation_email';
+  protected $redirectTo = 'transport/confirmation_email';
 
   public function index()
   {
@@ -27,7 +27,7 @@ class ConfirmationEmailController extends Controller
         }
       }else {
         Flash('¡Error en la Confirmacion de Email!')->error();
-        return redirect()->intended('/disprovasa-sa/confirmation_email');
+        return redirect()->intended('/transport/confirmation_email');
       }      
   }
 }

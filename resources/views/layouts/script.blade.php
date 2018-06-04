@@ -3,10 +3,11 @@
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js") }}"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/dropdowns.js") }}"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/precargarimagen.js") }}"></script>
-
+<script src="{{ asset ("/bower_components/AdminLTE/plugins/jQuery/precargarimagen2.js") }}"></script>
 <!-- Bootstrap 3.3.2 JS -->
 <script src="{{ asset ("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/datatables/jquery.dataTables.min.js") }}" type="text/javascript" ></script>
+<script src="{{ asset ("/bower_components/AdminLTE/plugins/iCheck/icheck.min.js") }}" type="text/javascript" ></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js") }}" type="text/javascript" ></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js") }}" type="text/javascript" ></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/fastclick/fastclick.js") }}" type="text/javascript" ></script>
@@ -20,6 +21,26 @@
 <script src="{{ asset ("/bower_components/AdminLTE/dist/js/app.min.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/dist/js/demo.js") }}" type="text/javascript"></script>
 
+<script type="text/javascript">
+    $(function () {
+
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass   : 'iradio_minimal-blue'
+    })
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass   : 'iradio_minimal-red'
+    })
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    })
+  })
+</script>
   <script type="text/javascript">
         function showContent() {
             element = document.getElementById("editar_direccion");
@@ -76,7 +97,7 @@
           //Date picker
           $('#fechaNacimiento').datepicker({
             autoclose: true,
-            format: 'dd/mm/yyyy'
+            format: 'yyyy-mm-dd'
           });
           $('#fechaIngreso').datepicker({
             autoclose: true,
@@ -132,6 +153,16 @@
               tecla = (document.all) ? e.keyCode : e.which;
               if (tecla==8) return true;
               patron =/[0-9]+/;
+              te = String.fromCharCode(tecla);
+              return patron.test(te);
+          }
+    </script>
+
+    <script>
+          function tipolicencia(e) {
+              tecla = (document.all) ? e.keyCode : e.which;
+              if (tecla==8) return true;
+              patron =/[ABCM]/;
               te = String.fromCharCode(tecla);
               return patron.test(te);
           }

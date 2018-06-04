@@ -10,6 +10,14 @@ class Organitation extends Model
   protected $guarded = [
   	'id',
   	'municipality_id',
-  	'rol_id'
   ];
+  
+  protected $fillable = [
+    'name',
+    'direction',             
+  ];  
+
+  public static function mostrarInformacion(){
+    return Organitation::select('id', 'name')->orderBy('name', 'asc')->get();
+  }        
 }

@@ -4,6 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Rol::class, function (Faker $faker) {
     return [
-        'name'=> null
+        'organitation_id' => null,
+        'name' => null
     ];
 });

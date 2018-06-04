@@ -13,7 +13,7 @@
       <td valign="top">
         {{ $slot }}
       </td>
-      <td align="left" valign="bottom" class="col-md-3">
+      <td align="left" valign="bottom" class="col-md-4">
         <button type="submit" class="btn btn-success">
     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     Buscar

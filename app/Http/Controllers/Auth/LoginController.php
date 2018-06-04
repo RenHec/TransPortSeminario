@@ -11,33 +11,18 @@ class LoginController extends Controller
 {
 
     use AuthenticatesUsers;
-    protected $redirectTo = 'disprovasa-sa/home';
+    protected $redirectTo = 'transport/home';
 
-        /**
-         * Create a new controller instance.
-         *
-         * @return void
-         */
         public function __construct()
         {
             $this->middleware('guest')->except('logout');
         }
 
-        /**
-         * Redirect the user to the GitHub authentication page.
-         *
-         * @return Response
-         */
         public function redirectToProvider($provider)
         {
             return Socialite::driver($provider)->redirect('home');
         }
 
-        /**
-         * Obtain the user information from GitHub.
-         *
-         * @return Response
-         */
         public function handleProviderCallback($provider)
         {
 
@@ -57,7 +42,7 @@ class LoginController extends Controller
                session()->flash('message', 'Cuenta no existe');
                return redirect('login');
              }else{
-               User::where('email',$user->getEmail())
+              User::where('email',$user->getEmail())
                          ->update([
                            'username' => $user->getName(),
                            'email' => $user->getEmail(),
@@ -66,8 +51,8 @@ class LoginController extends Controller
                          ]);
 
                auth()->login($socialuser);
-               return redirect()->To('home');
 
+               return redirect()->To('home');
              }
         }
     }

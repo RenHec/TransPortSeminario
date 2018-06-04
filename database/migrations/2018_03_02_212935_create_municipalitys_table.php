@@ -11,7 +11,7 @@ class CreateMunicipalitysTable extends Migration
     {
         Schema::create('municipalitys', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name',50)->unique()->nullable();
+          $table->string('name',50)->nullable();
           $table->integer('departament_id')->unsigned()->nullable();
           $table->foreign('departament_id')->references('id')->on('departaments')->onUpdate('cascade');
           $table->timestamps();
