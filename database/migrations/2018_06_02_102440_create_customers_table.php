@@ -6,11 +6,12 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCustomersTable extends Migration
 {
+    //Falta
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dpi')->unique()->nullable();
+            $table->integer('dpi')->nullable();
             $table->string('first_name',50)->nullable();
             $table->string('second_name',50);
             $table->string('first_last_name',50)->nullable();

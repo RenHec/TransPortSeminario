@@ -49,7 +49,7 @@ return [
     */
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'emisor.tarea@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Disprovasa, S.A.'),
+        'name' => env('MAIL_FROM_NAME', 'TransPort, S.A.'),
     ],
     /*
     |--------------------------------------------------------------------------

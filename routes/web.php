@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/{id}', 'MunicipalitysController@getMunicipalitys');
+Route::get('/employee/{id}', 'MunicipalitysController@getEmployees');
+Route::get('/rol/{id}', 'MunicipalitysController@getRols');
 
 Route::resource('transport/home', 'HomeController');
 Route::resource('transport/confirmation_email', 'ConfirmationEmailController');
@@ -37,8 +39,23 @@ Route::resource('transport/transport-employee', 'ControllerTransPorEmployee');
 Route::post('transport/transport-user/search', 'ControllerTransPorUser@search')->name('transport-user.search');
 Route::resource('transport/transport-user', 'ControllerTransPorUser');
 
-Route::post('disprovasa-sa/user-management/search', 'UserManagementController@search')->name('user-management.search');
-Route::resource('disprovasa-sa/user-management', 'UserManagementController');
+Route::post('transport/transport-sales/search', 'ControllerTransSaleCost@search')->name('transport-sales.search');
+Route::resource('transport/transport-sales', 'ControllerTransSaleCost');
+
+Route::post('transport/transport-category/search', 'ControllerTransCategory@search')->name('transport-category.search');
+Route::resource('transport/transport-category', 'ControllerTransCategory');
+
+Route::post('transport/transport-unit/search', 'ControllerTransUnit@search')->name('transport-unit.search');
+Route::resource('transport/transport-unit', 'ControllerTransUnit');
+
+Route::post('transport/transport-typeoperator/search', 'ControllerTransTypeOperator@search')->name('transport-typeoperator.search');
+Route::resource('transport/transport-typeoperator', 'ControllerTransTypeOperator');
+
+Route::post('transport/transport-measurement/search', 'ControllerTransUnitMeasurement@search')->name('transport-measurement.search');
+Route::resource('transport/transport-measurement', 'ControllerTransUnitMeasurement');
+
+Route::post('transport/transport-statesubject/search', 'ControllerTransStateSubjest@search')->name('transport-statesubject.search');
+Route::resource('transport/transport-statesubject', 'ControllerTransStateSubjest');
 
 //Recurso por gusto
 Route::post('transport/transport-formulario/search', 'ControllerTBFormulario@search')->name('transport-formulario.search');

@@ -83,7 +83,6 @@ class Employee extends Model
   }   
 
   public static function actualizarRegistro(Request $request, $id){
-            dd($request->all());
     $insert = Employee::findOrFail($id);
     $insert->dpi = $request->dpi;
     $insert->first_name = $request->first_name;

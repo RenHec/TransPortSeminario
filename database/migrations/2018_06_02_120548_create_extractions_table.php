@@ -13,8 +13,10 @@ class CreateExtractionsTable extends Migration
             $table->decimal('quantity', 10, 2)->nullable();
             $table->integer('operator_id')->unsigned()->nullable(); 
             $table->integer('type_extraction_id')->unsigned()->nullable();
-            $table->foreign('operator_id')->references('id')->on('operator_types')->onUpdate('cascade');            
-            $table->foreign('type_extraction_id')->references('id')->on('types_extractions')->onUpdate('cascade');      
+            $table->integer('organitation_id')->unsigned()->nullable();
+            $table->foreign('operator_id')->references('id')->on('operator_types')->onUpdate('cascade');
+            $table->foreign('type_extraction_id')->references('id')->on('types_extractions')->onUpdate('cascade');
+            $table->foreign('organitation_id')->references('id')->on('organitations')->onUpdate('cascade');         
             $table->timestamps();
         });
     }

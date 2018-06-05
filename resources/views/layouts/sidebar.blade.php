@@ -44,7 +44,12 @@ function current_page($url = '/'){
           <ul class="treeview-menu">
             <li><a href="{{ route('transport-rol.index') }}"><i class="fa fa-lock"></i> <span>Rol</span></a></li>
             <li><a href="{{ route('transport-employee.index') }}"><i class="fa fa-male"></i> <span>Empleado</span></a></li> 
-            <li><a href="{{ route('transport-user.index') }}"><i class="fa fa-users"></i> <span>Usuario</span></a></li>                         
+            <li><a href="{{ route('transport-user.index') }}"><i class="fa fa-users"></i> <span>Usuario</span></a></li>   
+
+            <li><a href="{{ route('transport-sales.index') }}"><i class="fa fa-terminal"></i> <span>Costo</span></a></li>  
+            <li><a href="{{ route('transport-category.index') }}"><i class="fa fa-terminal"></i> <span>Category</span></a></li>    
+            <li><a href="{{ route('transport-unit.index') }}"><i class="fa fa-terminal"></i> <span>Producto</span></a></li>      
+            <li><a href="{{ route('transport-typeoperator.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Producto</span></a></li>                                                              
           </ul>
         </li>
         @endif

@@ -10,7 +10,7 @@ class CreateStatesSubjectsTable extends Migration
     {
         Schema::create('states_subjects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50)->unique()->nullable();
+            $table->string('name', 15)->unique()->nullable();
             $table->timestamps();
         });
     }

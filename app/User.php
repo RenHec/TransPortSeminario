@@ -39,11 +39,7 @@ class User extends Authenticatable
   } 
 
   public static function insertInformacion(Request $request){
-    $hola = "DISPROVASA-".str_random(6)."!";
-    $pass = bcrypt(str_random(32));
-
-    $employee = User::join('employees', 'users.employee_id', 'employees.id')
-                ->select('employees.first_name as first_name', 'employees.second_name as second_name', 'employees.first_last_name as first_last_name', 'employees.second_last_name as second_last_name')->get();
+    $hola = "TransPort-".str_random(6)."!";
 
     $insert = new User();
     $insert->rol_id = $request->rol_id;
@@ -51,20 +47,20 @@ class User extends Authenticatable
     $insert->state_id = 1;
     $insert->username = $request->username;
     $insert->email = $request->email;
-    $insert->password = bcrypt($request->password);
-    $insert->token = $request->token;
-    if($user->save()){
-
+    $insert->password = bcrypt(str_random(32));
+    $insert->token = $hola;
+    if($insert->save()){
+        $email = $request->email;
         $data = array(
           'title' => "Bienvenido",
-          'user' => $employee->first_name ." ". $employee->second_name ." ". $employee->first_last_name ." ". $employee->second_last_name,
+          'user' => $request->username,
           'confirmation' => "se le ha creado una cuenta en el Sistema TransPort, S.A. y es necesario que confirme su Correo Electrónico y el siguiente",
           'token' => "Toke: " . $hola,
           'link' => "Ingresar al Siguiente LINK:  http://127.0.0.1:8000/transport/confirmation_email"
         );
         Mail::send('emails.correo_bienvenida', $data, function ($message) use ($email){
             $message->subject('Confirmar Cuenta');
-            $message->to($request->email);
+            $message->to($email);
         });
         return true;
     }

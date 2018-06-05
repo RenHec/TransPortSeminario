@@ -19,8 +19,9 @@ class PasswordResetController extends Controller
   public function show($id)
   {
     $buscar_emails = DB::table('users')
-                      ->select('users.*')
-                      ->where('id', '=', $id)->get();
+                      ->join('employees', 'users.employee_id', 'employees.id')
+                      ->select('users.*', 'employees.avatar as avatar')
+                      ->where('users.id', '=', $id)->get();
     if($buscar_emails->count() == 1){
         $messages="";
         return view('auth/Security/password_reset', ['buscar_emails' => $buscar_emails, 'messages' => $messages]);
@@ -60,7 +61,7 @@ class PasswordResetController extends Controller
       if($user->save())
       {
         Flash('¡Ingrese E-mail y Password!')->success();
-        return redirect()->intended('/disprovasa-sa/home');
+        return redirect()->intended('/transport/home');
       }
     }
   }
