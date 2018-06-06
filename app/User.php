@@ -56,7 +56,7 @@ class User extends Authenticatable
           'user' => $request->username,
           'confirmation' => "se le ha creado una cuenta en el Sistema TransPort, S.A. y es necesario que confirme su Correo Electrónico y el siguiente",
           'token' => "Toke: " . $hola,
-          'link' => "Ingresar al Siguiente LINK:  http://127.0.0.1:8000/transport/confirmation_email"
+          'link' => "Ingresar al Siguiente LINK:  http://206.81.8.65/transport/confirmation_email"
         );
         Mail::send('emails.correo_bienvenida', $data, function ($message) use ($email){
             $message->subject('Confirmar Cuenta');
