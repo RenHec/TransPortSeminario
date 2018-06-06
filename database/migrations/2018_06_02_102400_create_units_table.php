@@ -10,9 +10,9 @@ class CreateUnitsTable extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50)->unique()->nullable();
-            $table->string('description',600);
-            $table->smallInteger('quantity_matter')->nullable();
+            $table->string('name',50)->unique();
+            $table->string('description',600)->nullable();
+            $table->smallInteger('quantity_matter');
             $table->timestamps();
         });
     }

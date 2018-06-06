@@ -10,12 +10,12 @@ class CreateMachinerysTable extends Migration
     {
         Schema::create('machinerys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 75)->nullable();
-            $table->smallInteger('model')->nullable();
+            $table->string('name', 75);
+            $table->smallInteger('model');
             $table->integer('km');
-            $table->string('description', 600)->unique()->nullable();
-            $table->longText('photo'); 
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->string('description', 600)->unique();
+            $table->longText('photo')->nullable(); 
+            $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');        
             $table->timestamps();
         });

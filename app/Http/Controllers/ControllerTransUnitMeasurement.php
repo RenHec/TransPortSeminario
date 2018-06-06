@@ -74,8 +74,8 @@ class ControllerTransUnitMeasurement extends Controller
     public function update(Request $request, $id)
     {
         $data = UnitMeasurement::findOrFail($id);
-        $insert->name = $request->name;
-        $insert->abbreviation = $request->abbreviation;
+        $data->name = $request->name;
+        $data->abbreviation = $request->abbreviation;
         if($data->save()){
             Flash('¡La información fue creada exitosamente!')->success();
             return redirect()->intended('/transport/transport-measurement');            

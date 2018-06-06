@@ -14,4 +14,8 @@ class UnitMeasurement extends Model
   	'name',
   	'abbreviation',
   ]; 
+
+  public static function mostrarInformacion(){
+    return UnitMeasurement::select('id', 'name', 'abbreviation')->orderBy('name', 'asc')->get();
+  }    
 }

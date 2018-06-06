@@ -10,9 +10,9 @@ class CreateRolsMenusButtons extends Migration
     {
         Schema::create('rols_menus_buttons', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('rol_id')->unsigned()->nullable(); 
-            $table->integer('button_id')->unsigned()->nullable();
-            $table->integer('menu_id')->unsigned()->nullable(); 
+            $table->integer('rol_id')->unsigned(); 
+            $table->integer('button_id')->unsigned();
+            $table->integer('menu_id')->unsigned(); 
             $table->foreign('button_id')->references('id')->on('buttons')->onUpdate('cascade');
             $table->foreign('menu_id')->references('id')->on('menus')->onUpdate('cascade'); 
             $table->foreign('rol_id')->references('id')->on('rols')->onUpdate('cascade');

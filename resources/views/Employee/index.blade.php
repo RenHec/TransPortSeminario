@@ -46,7 +46,7 @@
                 <th width="28%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Dirección</th>
                 <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Teléfono</th>   
                 <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Organizacion</th>                                
-                <th width="1%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Opciones</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Opciones</th>
               </tr>
             </thead>
             <tbody>
@@ -63,7 +63,6 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="{{ route('transport-employee.edit', ['id' => $data->id]) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="{{ route('transport-employee.show', ['id' => $data->id]) }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                         @if(Auth::user()->username != $data->username) 
                           @if($data->low == false)
                           <button type="submit" class="btn btn-danger"><i class="fa fa-thumbs-o-down"></i></button>

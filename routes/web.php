@@ -57,6 +57,18 @@ Route::resource('transport/transport-measurement', 'ControllerTransUnitMeasureme
 Route::post('transport/transport-statesubject/search', 'ControllerTransStateSubjest@search')->name('transport-statesubject.search');
 Route::resource('transport/transport-statesubject', 'ControllerTransStateSubjest');
 
+Route::post('transport/transport-customer/search', 'ControllerTransPorCustomer@search')->name('transport-customer.search');
+Route::resource('transport/transport-customer', 'ControllerTransPorCustomer');
+
+Route::post('transport/transport-typeextraction/search', 'ControllerTransPorTypeExtraction@search')->name('transport-typeextraction.search');
+Route::resource('transport/transport-typeextraction', 'ControllerTransPorTypeExtraction');
+
+Route::post('transport/transport-commoditieunit/search', 'ControllerTransPorCommoditieUnit@search')->name('transport-commoditieunit.search');
+Route::resource('transport/transport-commoditieunit', 'ControllerTransPorCommoditieUnit');
+
+Route::post('transport/transport-machinary/search', 'ControllerTransPorMachinery@search')->name('transport-machinary.search');
+Route::resource('transport/transport-machinary', 'ControllerTransPorMachinery');
+
 //Recurso por gusto
 Route::post('transport/transport-formulario/search', 'ControllerTBFormulario@search')->name('transport-formulario.search');
 Route::resource('transport/transport-formulario', 'ControllerTBFormulario');

@@ -10,9 +10,9 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20)->unique()->nullable();
-            $table->string('action',20)->unique()->nullable();
-            $table->integer('id_father')->nullable();
+            $table->string('name',20)->unique();
+            $table->string('action',20)->unique();
+            $table->integer('id_father');
             $table->timestamps();
         });
     }

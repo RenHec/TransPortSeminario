@@ -10,7 +10,7 @@ class CreateOperatorTypesTable extends Migration
     {
         Schema::create('operator_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50)->unique()->nullable();
+            $table->string('name', 50)->unique();
             $table->char('type_license', 1);               
             $table->timestamps();
         });

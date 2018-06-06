@@ -10,9 +10,9 @@ class CreateCommoditiesUnitsTable extends Migration
     {
         Schema::create('commodities_units', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('quantity', 10, 2)->nullable();
-            $table->integer('type_extraction_id')->unsigned()->nullable();
-            $table->integer('unit_id')->unsigned()->nullable();
+            $table->decimal('quantity', 10, 2);
+            $table->integer('type_extraction_id')->unsigned();
+            $table->integer('unit_id')->unsigned();
             $table->foreign('type_extraction_id')->references('id')->on('types_extractions')->onUpdate('cascade');       
             $table->foreign('unit_id')->references('id')->on('units')->onUpdate('cascade');      
             $table->timestamps();

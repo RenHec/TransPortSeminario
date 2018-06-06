@@ -10,8 +10,8 @@ class CreateRolsTable extends Migration
     {
         Schema::create('rols', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name',25)->nullable();
-          $table->integer('organitation_id')->unsigned()->nullable();               
+          $table->string('name',25);
+          $table->integer('organitation_id')->unsigned();               
           $table->foreign('organitation_id')->references('id')->on('organitations')->onUpdate('cascade');
           $table->timestamps();
         });

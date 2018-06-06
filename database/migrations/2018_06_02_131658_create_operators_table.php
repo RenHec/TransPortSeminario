@@ -10,9 +10,9 @@ class CreateOperatorsTable extends Migration
     {
         Schema::create('operators', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned()->nullable();
-            $table->integer('machinery_id')->unsigned()->nullable();               
-            $table->integer('state_id')->unsigned()->nullable();
+            $table->integer('employee_id')->unsigned();
+            $table->integer('machinery_id')->unsigned();               
+            $table->integer('state_id')->unsigned();
             $table->foreign('employee_id')->references('id')->on('employees')->onUpdate('cascade');  
             $table->foreign('machinery_id')->references('id')->on('machinerys')->onUpdate('cascade');
             $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade');

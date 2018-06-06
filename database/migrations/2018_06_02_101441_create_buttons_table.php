@@ -10,7 +10,7 @@ class CreateButtonsTable extends Migration
     {
         Schema::create('buttons', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20)->unique()->nullable();
+            $table->string('name',20)->unique();
             $table->timestamps();
         });
     }

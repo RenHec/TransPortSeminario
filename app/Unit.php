@@ -16,4 +16,8 @@ class Unit extends Model
 	  'description',
 	  'quantity_matter'   
 	]; 	
+
+	public static function mostrarInformacion(){
+	   return Unit::select('id', 'name')->orderBy('name', 'asc')->get();
+	}  	
 }

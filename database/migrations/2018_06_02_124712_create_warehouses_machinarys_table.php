@@ -10,12 +10,12 @@ class CreateWarehousesMachinarysTable extends Migration
     {
         Schema::create('warehouses_machinarys', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('stock')->nullable();
-            $table->smallInteger('used')->nullable();
-            $table->smallInteger('rented')->nullable();
-            $table->boolean('existence')->nullable();
-            $table->integer('machinery_id')->unsigned()->unique()->nullable();
-            $table->integer('sale_cost_id')->unsigned()->nullable();
+            $table->smallInteger('stock');
+            $table->smallInteger('used');
+            $table->smallInteger('rented');
+            $table->boolean('existence');
+            $table->integer('machinery_id')->unsigned()->unique();
+            $table->integer('sale_cost_id')->unsigned();
             $table->foreign('machinery_id')->references('id')->on('machinerys')->onUpdate('cascade');      
             $table->foreign('sale_cost_id')->references('id')->on('sales_costs')->onUpdate('cascade');      
             $table->timestamps();

@@ -14,4 +14,8 @@ class Category extends Model
 	protected $fillable = [
 	  'name',   
 	]; 
+
+	public static function mostrarInformacion(){
+	  	return Category::select('id', 'name')->orderBy('name', 'asc')->get();
+	}  	
 }

@@ -36,7 +36,7 @@
                   <button type="submit" class="btn btn-primary">
                       <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
                   </button>
-                  <a href="{{ route('transport-sales.index') }}" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</a>
+                  <a href="{{ route('transport-category.index') }}" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</a>
               </div>              
             </div>  
           </form>

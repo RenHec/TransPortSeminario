@@ -13,4 +13,8 @@ class StateSubject extends Model
   protected $fillable = [
   	'name',
   ]; 
+
+  public static function mostrarInformacion(){
+    return StateSubject::select('id', 'name')->orderBy('name', 'asc')->get();
+  }    
 }

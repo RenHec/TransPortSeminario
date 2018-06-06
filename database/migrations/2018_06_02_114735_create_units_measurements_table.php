@@ -10,8 +10,8 @@ class CreateUnitsMeasurementsTable extends Migration
     {
         Schema::create('units_measurements', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50)->unique()->nullable();
-            $table->string('abbreviation', 10)->nullable();
+            $table->string('name', 50)->unique();
+            $table->string('abbreviation', 10);
             $table->timestamps();
         });
     }

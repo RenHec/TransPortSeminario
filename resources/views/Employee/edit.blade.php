@@ -48,7 +48,7 @@
               </div>
               <div class="col-md-3">
                 <label for="second_name" class="control-label"> Segundo Nombre</label>
-                <input id="second_name" type="text" class="form-control" placeholder="nombre" name="second_name" value="{{ $data->second_name }}" onkeypress="return letras(event)" maxlength="50" required autofocus>
+                <input id="second_name" type="text" class="form-control" placeholder="nombre" name="second_name" value="{{ $data->second_name }}" onkeypress="return letras(event)" maxlength="50" autofocus>
                   @if ($errors->has('second_name'))
                     <span class="help-block"><strong>{{ $errors->first('second_name') }}</strong></span>
                   @endif
@@ -62,7 +62,7 @@
               </div> 
               <div class="col-md-3">
                 <label for="second_last_name" class="control-label"> Segundo Apellido</label>
-                <input id="second_last_name" type="text" class="form-control" placeholder="apellido" name="second_last_name" value="{{ $data->second_last_name }}" onkeypress="return letras(event)" maxlength="50" required autofocus>
+                <input id="second_last_name" type="text" class="form-control" placeholder="apellido" name="second_last_name" value="{{ $data->second_last_name }}" onkeypress="return letras(event)" maxlength="50" autofocus>
                   @if ($errors->has('second_last_name'))
                     <span class="help-block"><strong>{{ $errors->first('second_last_name') }}</strong></span>
                   @endif
@@ -110,7 +110,7 @@
                   </div>               
               </div>
               <div class="col-md-3">
-                <label for="phone" class="control-label"> Teléfono</label>
+                <label for="phone" class="control-label"><label style="color:red">*</label> Teléfono</label>
                 <input id="phone" type="text" class="form-control" placeholder="00000000" name="phone" value="{{ $data->phone }}" onkeypress="return numeros(event)" maxlength="8" required autofocus>
                   @if ($errors->has('phone'))
                     <span class="help-block"><strong>{{ $errors->first('phone') }}</strong></span>

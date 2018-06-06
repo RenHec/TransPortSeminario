@@ -53,7 +53,6 @@
                   <td>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <a href="{{ route('transport-rol.edit', ['id' => $data->id]) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                    <a href="{{ route('transport-rol.show', ['id' => $data->id]) }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                   </td>
               </tr>
             @endforeach

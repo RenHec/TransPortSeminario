@@ -10,9 +10,9 @@ class CreateOrganitationsTable extends Migration
     {
         Schema::create('organitations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 60)->nullable();
-            $table->string('direction', 100);
-            $table->integer('municipality_id')->unsigned()->nullable();   
+            $table->string('name', 60);
+            $table->string('direction', 100)->nullable();
+            $table->integer('municipality_id')->unsigned();   
             $table->foreign('municipality_id')->references('id')->on('municipalitys')->onUpdate('cascade');         
             $table->timestamps();
         });

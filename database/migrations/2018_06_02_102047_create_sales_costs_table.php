@@ -10,7 +10,7 @@ class CreateSalesCostsTable extends Migration
     {
         Schema::create('sales_costs', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('cost', 8, 2)->nullable();
+            $table->decimal('cost', 8, 2);
             $table->timestamps();
         });
     }

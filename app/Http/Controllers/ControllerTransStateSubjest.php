@@ -73,8 +73,7 @@ class ControllerTransStateSubjest extends Controller
     public function update(Request $request, $id)
     {
         $data = StateSubject::findOrFail($id);
-        $insert->name = $request->name;
-        $insert->abbreviation = $request->abbreviation;
+        $data->name = $request->name;
         if($data->save()){
             Flash('¡La información fue creada exitosamente!')->success();
             return redirect()->intended('/transport/transport-statesubject');            
