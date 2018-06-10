@@ -13,10 +13,9 @@ class CreateWarehousesMachinarysTable extends Migration
             $table->smallInteger('stock');
             $table->smallInteger('used');
             $table->smallInteger('rented');
-            $table->boolean('existence');
             $table->integer('machinery_id')->unsigned()->unique();
             $table->integer('sale_cost_id')->unsigned();
-            $table->foreign('machinery_id')->references('id')->on('machinerys')->onUpdate('cascade');      
+            $table->foreign('machinery_id')->references('id')->on('machinerys')->onUpdate('cascade');
             $table->foreign('sale_cost_id')->references('id')->on('sales_costs')->onUpdate('cascade');      
             $table->timestamps();
         });

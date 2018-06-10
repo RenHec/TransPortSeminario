@@ -23,7 +23,7 @@ class Machinery extends Model
 	  	return Machinery::select('id', 'name', 'model')->orderBy('name', 'asc')->get();
 	} 
 
-	public static function buscar($id){
-	   	return Machinery::where('departament_id', $id)->orderBy('name', 'asc')->get();
+	public static function buscarInformacion($id){
+	   	return Machinery::where('category_id', $id)->orderBy('name', 'asc')->get();
 	}	
 }

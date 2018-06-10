@@ -11,23 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
-
 Auth::routes();
 
 Route::get('/{id}', 'MunicipalitysController@getMunicipalitys');
 Route::get('/employee/{id}', 'MunicipalitysController@getEmployees');
 Route::get('/rol/{id}', 'MunicipalitysController@getRols');
+Route::get('/machinary/{id}', 'MunicipalitysController@getMachinarys');
 
 Route::resource('transport/home', 'HomeController');
+Route::resource('/', 'ControllerTransPortCatalogo');
 Route::resource('transport/confirmation_email', 'ConfirmationEmailController');
 Route::resource('transport/password_reset', 'PasswordResetController');
 Route::resource('transport/correo_bienvenida', 'CorreoBienvenidaController');
-
-Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::resource('transport/cliente', 'ControllerCustomer');
+Route::resource('transport/nuevo', 'ControllerCustomerCreate');
+Route::resource('transport/rent', 'ControllerTransPorRent');
 
 //Nuevos Controladores con URL transport
 Route::post('transport/transport-rol/search', 'ControllerTransPorRol@search')->name('transport-rol.search');
@@ -68,6 +66,21 @@ Route::resource('transport/transport-commoditieunit', 'ControllerTransPorCommodi
 
 Route::post('transport/transport-machinary/search', 'ControllerTransPorMachinery@search')->name('transport-machinary.search');
 Route::resource('transport/transport-machinary', 'ControllerTransPorMachinery');
+
+Route::post('transport/transport-operator/search', 'ControllerTransPorOperator@search')->name('transport-operator.search');
+Route::resource('transport/transport-operator', 'ControllerTransPorOperator');
+
+Route::post('transport/transport-extraction/search', 'ControllerTransPorExtraction@search')->name('transport-extraction.search');
+Route::resource('transport/transport-extraction', 'ControllerTransPorExtraction');
+
+Route::post('transport/transport-transportmateria/search', 'ControllerTransPorTransportMateria@search')->name('transport-transportmateria.search');
+Route::resource('transport/transport-transportmateria', 'ControllerTransPorTransportMateria');
+
+Route::post('transport/transport-warehousesubject/search', 'ControllerTransPortWarehouseSubject@search')->name('transport-warehousesubject.search');
+Route::resource('transport/transport-warehousesubject', 'ControllerTransPortWarehouseSubject');
+
+Route::post('transport/transport-warehousemachinary/search', 'ControllerTransPortWarehouseMachinary@search')->name('transport-warehousemachinary.search');
+Route::resource('transport/transport-warehousemachinary', 'ControllerTransPortWarehouseMachinary');
 
 //Recurso por gusto
 Route::post('transport/transport-formulario/search', 'ControllerTBFormulario@search')->name('transport-formulario.search');

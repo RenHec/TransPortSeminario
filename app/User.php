@@ -32,9 +32,11 @@ class User extends Authenticatable
 
   public static function mostrarInformacion(){
     return User::join('employees', 'users.employee_id', 'employees.id')
+              ->join('organitations', 'employees.organitation_id', 'organitations.id')
+              ->join('municipalitys', 'organitations.municipality_id', 'municipalitys.id')
               ->join('rols', 'users.rol_id', 'rols.id')
               ->join('states', 'users.state_id', 'states.id')
-              ->select('users.*', 'employees.first_name as first_name', 'employees.second_name as second_name', 'employees.first_last_name as first_last_name', 'employees.second_last_name as second_last_name', 'rols.name as rol', 'states.name as state')
+              ->select('users.*', 'employees.first_name as first_name', 'employees.second_name as second_name', 'employees.first_last_name as first_last_name', 'employees.second_last_name as second_last_name', 'rols.name as rol', 'states.name as state', 'organitations.name as organitation', 'municipalitys.name as municipality')
               ->paginate(10);
   } 
 
@@ -48,6 +50,7 @@ class User extends Authenticatable
     $insert->username = $request->username;
     $insert->email = $request->email;
     $insert->password = bcrypt(str_random(32));
+    $insert->remember_token = str_random(10);
     $insert->token = $hola;
     if($insert->save()){
         $email = $request->email;
@@ -103,12 +106,18 @@ class User extends Authenticatable
       
     if($posicion == 1){
       $data = User::findOrFail($id);
-        
+
       if($data->state_id == 1){
         $data->state_id = 2;
+        if($data->save()){
+          return true;
+        }  
       }
       if($data->state_id == 2){
         $data->state_id = 1;
+        if($data->save()){
+          return true;
+        }         
       }
     }
     if($posicion == 2){
@@ -116,14 +125,16 @@ class User extends Authenticatable
         
       if($data->state_id == 1){
         $data->state_id = 2;
+        if($data->save()){
+          return true;
+        }         
       }
       if($data->state_id == 2){
         $data->state_id = 1;
+        if($data->save()){
+          return true;
+        } 
       }  
-    }  
-
-    if($data->save()){
-      return true;
     }        
   }
 }

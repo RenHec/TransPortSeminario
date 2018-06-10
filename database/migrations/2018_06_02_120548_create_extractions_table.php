@@ -14,7 +14,7 @@ class CreateExtractionsTable extends Migration
             $table->integer('operator_id')->unsigned(); 
             $table->integer('type_extraction_id')->unsigned();
             $table->integer('organitation_id')->unsigned();
-            $table->foreign('operator_id')->references('id')->on('operator_types')->onUpdate('cascade');
+            $table->foreign('operator_id')->references('id')->on('operators')->onUpdate('cascade');
             $table->foreign('type_extraction_id')->references('id')->on('types_extractions')->onUpdate('cascade');
             $table->foreign('organitation_id')->references('id')->on('organitations')->onUpdate('cascade');         
             $table->timestamps();

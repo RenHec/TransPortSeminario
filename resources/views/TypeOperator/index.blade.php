@@ -4,7 +4,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row" style="text-align:center">
-              <h1>Mostrar Información</h1>
+              <h1>TIPOS DE OPERADORES</h1>
       </div>
       <br>
 

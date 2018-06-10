@@ -14,6 +14,6 @@ class UserSeeder extends Seeder
         'email' => 'renato.ojeda.1993@gmail.com',
         'password' => bcrypt('admin123'),
         'token' => bcrypt('@!585det')
-      ]);
+      ]);      
     }
 }

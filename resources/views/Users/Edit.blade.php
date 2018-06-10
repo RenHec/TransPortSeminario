@@ -8,7 +8,7 @@
   </div>
   <br>
 
-  <form class="form-horizontal" role="form" method="POST" action="{{ route('user-management.update', ['id' => $user->id]) }}">
+  <form class="form-horizontal" role="form" method="POST" action="{{ route('transport-user', ['id' => $user->id]) }}">
       <input type="hidden" name="_method" value="PATCH">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

@@ -56,7 +56,7 @@ class PasswordResetController extends Controller
       $pass = bcrypt($request['password']);
 
       $user = User::findOrFail($id);
-      $user->password = strtoupper($pass);
+      $user->password = $pass;
       $user->token = bcrypt($hola);
       if($user->save())
       {

@@ -18,6 +18,8 @@ class Organitation extends Model
   ];  
 
   public static function mostrarInformacion(){
-    return Organitation::select('id', 'name')->orderBy('name', 'asc')->get();
+    return Organitation::join('municipalitys', 'organitations.municipality_id', 'municipalitys.id')
+                        ->join('departaments', 'municipalitys.departament_id', 'departaments.id')
+                        ->select('organitations.id as id', 'organitations.name as name', 'municipalitys.name as municipality', 'departaments.name as departament')->orderBy('organitations.name', 'asc')->get();
   }        
 }

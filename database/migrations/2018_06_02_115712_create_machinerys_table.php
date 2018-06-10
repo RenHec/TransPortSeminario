@@ -13,7 +13,7 @@ class CreateMachinerysTable extends Migration
             $table->string('name', 75);
             $table->smallInteger('model');
             $table->integer('km');
-            $table->string('description', 600)->unique();
+            $table->string('description', 600);
             $table->longText('photo')->nullable(); 
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');        

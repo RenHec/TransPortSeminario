@@ -89,7 +89,7 @@ class ControllerTransPorUser extends Controller
 
     public function destroy($id)
     {
-      if(User::debajaRegistro($id, $posicion)){
+      if(User::debajaRegistro($id, 1)){
           Flash('¡El Usuario se dio de baja exitosamente!')->success();
           return redirect()->intended('/transport/transport-user');
       }else {

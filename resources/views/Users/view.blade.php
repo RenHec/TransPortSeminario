@@ -61,7 +61,7 @@
         <!--Boton para Agregar-->
           <div class="form-group">
               <div class="col-md-8 col-md-offset-5">
-                <li><a href="{{ route('user-management.index') }}" class="btn btn-primary"><i class="fa fa-mail-reply-all"></i> Regresar</a></li>
+                <li><a href="{{ route('transport-user.index') }}" class="btn btn-primary"><i class="fa fa-mail-reply-all"></i> Regresar</a></li>
               </div>
           </div>
 </section>

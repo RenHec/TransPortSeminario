@@ -23,5 +23,13 @@
 					$("#rol_id").append("<option value='"+response[i].id+"'> "+response[i].name+" </option>");
 				}
 			});
-	});		
+	});	
 
+	$("#category_id").change(function(event){
+			$.get("/machinary/"+event.target.value,function(response,departamento){
+				$("#machinery_id").empty();
+				for(i=0; i<response.length; i++){
+					$("#machinery_id").append("<option value='"+response[i].id+"'> "+response[i].name+" </option>");
+				}
+			});
+	});				

@@ -35,7 +35,7 @@ class Employee extends Model
               ->join('municipalitys', 'employees.municipality_id', 'municipalitys.id')
               ->join('departaments', 'municipalitys.departament_id', 'departaments.id')
               ->leftjoin('users', 'employees.id', 'users.employee_id')
-              ->select('employees.*', 'municipalitys.name as municipality', 'departaments.name as departament', 'organitations.name as organitation', 'users.username as username')
+              ->select('employees.*', 'municipalitys.name as municipality', 'departaments.name as departament', 'organitations.name as organitation', 'users.username as username', 'employees.id as id')
               ->paginate(10);
   } 
 

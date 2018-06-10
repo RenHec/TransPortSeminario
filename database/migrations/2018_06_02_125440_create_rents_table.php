@@ -14,7 +14,9 @@ class CreateRentsTable extends Migration
             $table->smallInteger('hour');
             $table->dateTime('date_return');
             $table->integer('warehous_machinary_id')->unsigned();
-            $table->foreign('warehous_machinary_id')->references('id')->on('warehouses_machinarys')->onUpdate('cascade');      
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('warehous_machinary_id')->references('id')->on('warehouses_machinarys')->onUpdate('cascade');    
+            $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade');
             $table->timestamps();
         });
     }

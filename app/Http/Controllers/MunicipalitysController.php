@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Municipality;
 use App\Employee;
 use App\Rol;
+use App\Machinery;
 
 class MunicipalitysController extends Controller
 {
@@ -29,4 +30,11 @@ class MunicipalitysController extends Controller
         return response()->json($rols);
       }
   }    
+
+  public function getMachinarys(Request $request, $id){
+      if($request->ajax()){
+        $machinarys = Machinery::buscarInformacion($id);
+        return response()->json($machinarys);
+      }
+  }     
 }

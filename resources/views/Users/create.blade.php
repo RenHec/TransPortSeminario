@@ -40,7 +40,7 @@
                   <select class="form-control" name="organitation_id" id="organitation_id" required autofocus>
                     <option value="" selected disabled>seleccione organizacion</option>
                       @foreach ($organitations as $organitation)
-                        <option value="{{$organitation->id}}">{{$organitation->name}}</option>
+                        <option value="{{$organitation->id}}">{{$organitation->name}} | {{$organitation->departament}}, {{$organitation->municipality}}</option>
                       @endforeach
                   </select>
               </div>
@@ -64,7 +64,7 @@
                   <button type="submit" class="btn btn-primary">
                       <i class="glyphicon glyphicon-plus-sign"></i> Agregar
                   </button>
-                  <a href="{{ route('transport-employee.index') }}" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</a>
+                  <a href="{{ route('transport-user.index') }}" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</a>
               </div>              
             </div>  
           </form>

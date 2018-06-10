@@ -154,7 +154,7 @@
                   <select class="form-control" name="organitation_id" id="organitation_id" required autofocus>
                     <option value="" selected disabled>seleccione departamento</option>
                       @foreach ($organitations as $organitation)
-                        <option value="{{$organitation->id}}" {{$organitation->id == $data->organitation_id ? 'selected' : ''}}>{{$organitation->name}}</option>
+                        <option value="{{$organitation->id}}" {{$organitation->id == $data->organitation_id ? 'selected' : ''}}>{{$organitation->name}} | {{$organitation->departament}}, {{$organitation->municipality}}</option>
                       @endforeach
                   </select>
               </div>              

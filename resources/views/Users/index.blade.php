@@ -4,7 +4,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row" style="text-align:center">
-              <h1>Mostrar Información</h1>
+              <h1>USUARIOS</h1>
       </div>
       <br>
 
@@ -54,14 +54,12 @@
                   <td class="sorting">{{ $user->username }}</td>
                   <td class="sorting">{{ $user->first_name }} {{ $user->first_last_name }}</td>
                   <td class="sorting hidden-xs">{{ $user->email }}</td>
-                  <td class="sorting hidden-xs">{{ $user->rol }}</td>    
+                  <td class="sorting hidden-xs">{{ $user->rol }} | {{ $user->organitation }} - {{ $user->municipality }}</td>    
                   <td class="sorting hidden-xs">{{ $user->state }}</td>               
                   <td>
                     <form class="row" method="POST" action="{{ route('transport-user.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('¿Está seguro que quiere eliminar a el registro?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('transport-employee.edit', ['id' => $user->id]) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="{{ route('transport-employee.show', ['id' => $user->id]) }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                         @if(Auth::user()->username != $user->username) 
                           @if($user->state_id == 1)
                           <button type="submit" class="btn btn-danger"><i class="fa fa-thumbs-o-down"></i></button>

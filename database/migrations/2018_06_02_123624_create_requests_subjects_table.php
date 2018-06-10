@@ -13,7 +13,7 @@ class CreateRequestsSubjectsTable extends Migration
             $table->decimal('quantity', 11, 2);
             $table->integer('employee_id')->unsigned();
             $table->integer('warehouse_subject_primary_id')->unsigned();            
-            $table->foreign('employee_id')->references('id')->on('employees')->onUpdate('cascade');                  
+            $table->foreign('employee_id')->references('id')->on('employees')->onUpdate('cascade');
             $table->foreign('warehouse_subject_primary_id')->references('id')->on('warehouses_subjects_primarys')->onUpdate('cascade');      
             $table->timestamps();
         });

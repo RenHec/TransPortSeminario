@@ -45,23 +45,35 @@ function current_page($url = '/'){
             <li><a href="{{ route('transport-rol.index') }}"><i class="fa fa-lock"></i> <span>Rol</span></a></li>
             <li><a href="{{ route('transport-employee.index') }}"><i class="fa fa-male"></i> <span>Empleado</span></a></li> 
             <li><a href="{{ route('transport-user.index') }}"><i class="fa fa-users"></i> <span>Usuario</span></a></li>   
-            <li><a href="{{ route('transport-customer.index') }}"><i class="fa fa-terminal"></i> <span>Cliente</span></a></li>                                                                            
+            <li><a href="{{ route('transport-customer.index') }}"><i class="fa fa-terminal"></i> <span>Cliente</span></a></li>  
+
+            <li><a href="{{ route('transport-sales.index') }}"><i class="fa fa-terminal"></i> <span>Costo</span></a></li>  
+            <li><a href="{{ route('transport-category.index') }}"><i class="fa fa-terminal"></i> <span>Category</span></a></li>  
+            <li><a href="{{ route('transport-machinary.index') }}"><i class="fa fa-terminal"></i> <span>Maquinaria</span></a></li>  
+            <li><a href="{{ route('transport-typeoperator.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Operador</span></a></li>               
+            <li><a href="{{ route('transport-warehousemachinary.index') }}"><i class="fa fa-terminal"></i> <span>Almacen Maquinaria</span></a></li>                                                                                                                   
           </ul>
         </li>
         @endif
         @if(Auth::user()->rol_id == 2 || Auth::user()->rol_id == 3 || Auth::user()->rol_id == 4 || Auth::user()->rol_id == 5 ||Auth::user()->rol_id == 6 || Auth::user()->rol_id == 7)
         <li class="treeview">
-          <a href="#"><i class="glyphicon glyphicon-cog"></i> <span>Planta de Extración</span>
+          <a href="#"><i class="glyphicon glyphicon-cog"></i> <span>Planta de Extracción</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
             @if(Auth::user()->rol_id == 2 || Auth::user()->rol_id == 4 || Auth::user()->rol_id == 6)
-            <li><a href="#"><i class="fa fa-tree"></i> <span>Extración</span></a></li>
+            <li><a href="{{ route('transport-typeoperator.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Operador</span></a></li>              
+            <li><a href="{{ route('transport-operator.index') }}""><i class="fa fa-truck"></i> <span>Cargamento</span></a></li>
             @endif
             @if(Auth::user()->rol_id == 3 || Auth::user()->rol_id == 5 || Auth::user()->rol_id == 7)
-            <li><a href="#"><i class="fa fa-truck"></i> <span>Cargamento</span></a></li>
+            <li><a href="{{ route('transport-extraction.index') }}"><i class="fa fa-tree"></i> <span>Extración</span></a></li>  
+            <li><a href="{{ route('transport-transportmateria.index') }}"><i class="fa fa-automobile"></i> <span>Asignar Carga</span></a></li> 
+
+            <li><a href="{{ route('transport-statesubject.index') }}"><i class="fa fa-terminal"></i> <span>Estado de Extracción</span></a></li> 
+            <li><a href="{{ route('transport-measurement.index') }}"><i class="fa fa-terminal"></i> <span>Unidad de Medida</span></a></li>                 
+            <li><a href="{{ route('transport-typeextraction.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Extracción</span></a></li>                        
             @endif
           </ul>
         </li>
@@ -75,12 +87,12 @@ function current_page($url = '/'){
           </a>
           <ul class="treeview-menu">
             @if(Auth::user()->rol_id == 8 || Auth::user()->rol_id == 10 ||Auth::user()->rol_id == 12)
-            <li><a href="{{ route('transport-typeoperator.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Operador</span></a></li>  
-            <li><a href="{{ route('transport-statesubject.index') }}"><i class="fa fa-terminal"></i> <span>Estado de Extracción</span></a></li>   
+            <li><a href="{{ route('transport-statesubject.index') }}"><i class="fa fa-terminal"></i> <span>Estado de Extracción</span></a></li> 
+            <li><a href="{{ route('transport-measurement.index') }}"><i class="fa fa-terminal"></i> <span>Unidad de Medida</span></a></li>                 
             <li><a href="{{ route('transport-typeextraction.index') }}"><i class="fa fa-terminal"></i> <span>Tipo de Extracción</span></a></li>                                  
             @endif
             @if(Auth::user()->rol_id == 9 || Auth::user()->rol_id == 11 ||Auth::user()->rol_id == 13)
-            <li><a href="#"><i class="fa fa-building"></i> <span>Materia Prima</span></a></li>
+            <li><a href="{{ route('transport-warehousesubject.index') }}"><i class="fa fa-building"></i> <span>Materia Prima</span></a></li>
             @endif
           </ul>
         </li> 
@@ -95,7 +107,8 @@ function current_page($url = '/'){
           <ul class="treeview-menu">
             @if(Auth::user()->rol_id == 14 || Auth::user()->rol_id == 16 ||Auth::user()->rol_id == 18)
             <li><a href="{{ route('transport-unit.index') }}"><i class="fa fa-terminal"></i> <span>Producto</span></a></li>
-            <li><a href="{{ route('transport-measurement.index') }}"><i class="fa fa-terminal"></i> <span>Unidad de Medida</span></a></li>     
+            <li><a href="{{ route('transport-statesubject.index') }}"><i class="fa fa-terminal"></i> <span>Estado de Extracción</span></a></li> 
+            <li><a href="{{ route('transport-measurement.index') }}"><i class="fa fa-terminal"></i> <span>Unidad de Medida</span></a></li> 
             <li><a href="{{ route('transport-commoditieunit.index') }}"><i class="fa fa-terminal"></i> <span>Materia Prima Unidad</span></a></li>                          
             @endif
             @if(Auth::user()->rol_id == 15 || Auth::user()->rol_id == 17 ||Auth::user()->rol_id == 19)
@@ -130,12 +143,12 @@ function current_page($url = '/'){
           </a>
           <ul class="treeview-menu">
             @if(Auth::user()->rol_id == 26)
-           <li><a href="{{ route('transport-sales.index') }}"><i class="fa fa-terminal"></i> <span>Costo</span></a></li>  
+            <li><a href="{{ route('transport-sales.index') }}"><i class="fa fa-terminal"></i> <span>Costo</span></a></li>  
             <li><a href="{{ route('transport-category.index') }}"><i class="fa fa-terminal"></i> <span>Category</span></a></li>  
             <li><a href="{{ route('transport-machinary.index') }}"><i class="fa fa-terminal"></i> <span>Maquinaria</span></a></li>             
             @endif
             @if(Auth::user()->rol_id == 27)
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="{{ route('transport-warehousemachinary.index') }}"><i class="fa fa-terminal"></i> <span>Almacen Maquinaria</span></a></li>  
             @endif
           </ul>
         </li>   
